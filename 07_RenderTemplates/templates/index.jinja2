@@ -12,7 +12,7 @@
             <h1 class="header">Bem vindo <span id="nome">{{nome}}</span></h1>
             <h2>POSTAGENS</h2>
 
-            {% for titulo, artigo in artigos.items() %}
+            {% for titulo, artigo in artigos.items()%}
             <article>
                 <a href="{{ url_for('artigo', titulo=titulo) }}">{{titulo}}</a>
                 <p>{{artigo['conteudo']}}</p>

@@ -12,20 +12,20 @@ artigos = {
 
 @app.route('/')
 def index():
-    return render_template('login.html')
+    return render_template('login.jinja2')
 
 @app.route('/view', methods=['POST'])
 def view():
     nome =  request.form['nomeForm']
     idade = request.form['idade']
 
-    return render_template('index.html', nome=nome, idade=idade, artigos=artigos)
+    return render_template('index.jinja2', nome=nome, idade=idade, artigos=artigos)
 
 @app.route('/artigo/<titulo>')
 def artigo(titulo):
     artigo = artigos.get(titulo)
     if artigo:
-        return render_template('artigo.html', titulo=titulo, artigo=artigo)
+        return render_template('artigo.jinja2', titulo=titulo, artigo=artigo)
     else:
         return 'Artigo não encontrado'
 
