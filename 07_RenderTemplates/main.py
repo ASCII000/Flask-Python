@@ -11,6 +11,10 @@ artigos = {
     'Receita de pão de queijo':{
         'subtitulo':'Uma recomendação de um bom pão de queijo',
         'conteudo':'Quem não gosta de pão de queijo, certamente tem desvio de caráter! Descubra como fazer aquela massa fofinha e arrase no preparo do seu pão de queijo caseiro!'},
+    'Receita de pudim legal':{
+        'subtitulo':'Uma simples receita de pudim',
+        'conteudo':'Receita'
+    }
 }
 
 @app.route('/')
