@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <link rel="stylesheet" href="/07_RenderTemplates/static/styles.css">
+</head>
+<body>
+    <main>
+        <div id="login">
+            <h1 class="header">Bem vindo <span id="nome">{{nome}}</span></h1>
+            <h2>POSTAGENS</h2>
+
+            {% for titulo, artigo in artigos.items() %}
+            <article>
+                <a href="{{ url_for('artigo', titulo=titulo) }}">{{titulo}}</a>
+                <p>{{artigo['conteudo']}}</p>
+            </article>
+            {% endfor %}
+
+        </div>
+    </main>
+    
+    
+</body>
+</html>

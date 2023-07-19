@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/07_RenderTemplates/static/styles.css">
+</head>
+<body>
+    <main>
+        <h1>Bem vindo ao nosso <span id="nome">Sistema!</span></h1>
+        <form action="/view" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nomeForm" id="nomeForm" required>
+            <br>
+            <label for="idade">Idade:</label>
+            <input type="number" min="18" max="200" id="idade" name="idade" required>
+            <br>
+            <input type="submit" value="Enviar">
+        </form>
+    </main>
+    
+</body>
+</html>

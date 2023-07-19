@@ -1,0 +1,71 @@
+body {
+    background-color: antiquewhite;
+    font: bold 22px Arial;
+    margin: 0 auto;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    animation: inOut 1s ease-in;
+}
+
+#nome {
+    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(209,203,76,1) 43%, rgba(0,212,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+#login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    letter-spacing: 12px;
+    animation: lSpace 2s ease-in-out;
+}
+
+
+article {
+    background-color: white;
+    padding: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 500px;
+    margin-top: 12px;
+}
+article p {
+    font: normal 23px serif;
+}
+article a {
+    color: chocolate;
+    text-decoration: none;
+}
+
+input {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+@keyframes lSpace {
+    0% {
+        letter-spacing: 2px;
+    }
+    100% {
+        letter-spacing: 12px;
+    }
+}
+
+@keyframes inOut {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
