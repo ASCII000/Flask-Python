@@ -14,7 +14,7 @@
 
             {% for titulo, artigo in artigos.items()%}
             <article>
-                <a href="{{ url_for('artigo', titulo=titulo) }}">{{titulo}}</a>
+                <a href="{{ url_for('artigo', titulo=titulo)}}">{{titulo}}</a>
                 <p>{{artigo['conteudo']}}</p>
             </article>
             {% endfor %}

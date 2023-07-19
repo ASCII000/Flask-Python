@@ -4,10 +4,13 @@ from markupsafe import escape
 app = Flask(__name__)
 
 artigos = {
-    'Receita de bolo':{'subtitulo':'Quer uma receita de bolo simples e gostoso?','conteudo':'Quer um bolo simples, bem gostoso e fofinho para o café da tarde? Encontrou! Confira como fazer essa receita de bolo simples, também conhecido como bolo de farinha de trigo. Ele cai muito bem com um café quentinho!'},
-    'Receita de pão de queijo':{'subtitulo':'Bons exercicios para saúde!','conteudo':'Quem não gosta de pão de queijo, certamente tem desvio de caráter! Descubra como fazer aquela massa fofinha e arrase no preparo do seu pão de queijo caseiro!'},
-    'Receita de boslo':{'subtitulo':'Quer uma receita de bolo simples e gostoso?','conteudo':'Quer um bolo simples, bem gostoso e fofinho para o café da tarde? Encontrou! Confira como fazer essa receita de bolo simples, também conhecido como bolo de farinha de trigo. Ele cai muito bem com um café quentinho!'},
-    'Receita de pãos de queijo':{'subtitulo':'Bons exercicios para saúde!','conteudo':'Quem não gosta de pão de queijo, certamente tem desvio de caráter! Descubra como fazer aquela massa fofinha e arrase no preparo do seu pão de queijo caseiro!'}
+    'Receita de bolo':{
+        'subtitulo':'Quer uma receita de bolo simples e gostoso?',
+        'conteudo':'Quer um bolo simples, bem gostoso e fofinho para o café da tarde? Encontrou! Confira como fazer essa receita de bolo simples, também conhecido como bolo de farinha de trigo. Ele cai muito bem com um café quentinho!'},
+    
+    'Receita de pão de queijo':{
+        'subtitulo':'Uma recomendação de um bom pão de queijo',
+        'conteudo':'Quem não gosta de pão de queijo, certamente tem desvio de caráter! Descubra como fazer aquela massa fofinha e arrase no preparo do seu pão de queijo caseiro!'},
 }
 
 @app.route('/')
@@ -24,8 +27,9 @@ def view():
 @app.route('/artigo/<titulo>')
 def artigo(titulo):
     artigo = artigos.get(titulo)
+    print(artigo)
     if artigo:
-        return render_template('artigo.jinja2', titulo=titulo, artigo=artigo)
+        return render_template('artigo.jinja2', titulo=titulo, subtitulo=artigo['subtitulo'], conteudo=artigo['conteudo'])
     else:
         return 'Artigo não encontrado'
 
@@ -34,4 +38,5 @@ def artigo(titulo):
 def ffStatic(filename):
     return send_from_directory('static', filename)
 
-app.run()
+if __name__=='__main__':
+    app.run(debug=True)
